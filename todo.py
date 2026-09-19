@@ -1,4 +1,4 @@
-# Testing out irst PR workflow with a simple to-do list.
+# Testing out first PR workflow with a simple to-do list.
 # A simple command-line to-do list. Tasks are saved to tasks.json.
 
 import json
@@ -8,19 +8,19 @@ TASKS_FILE = Path(__file__).parent / "tasks.json"
 
 
 def load_tasks():
-    """Read tasks from disk. Return an empty list if there's no file yet."""
+    # Read tasks from disk. Return an empty list if there's no file yet.
     if TASKS_FILE.exists():
         return json.loads(TASKS_FILE.read_text())
     return []
 
 
 def save_tasks(tasks):
-    """Write the current list of tasks to disk."""
+    # Write the current list of tasks to disk.
     TASKS_FILE.write_text(json.dumps(tasks, indent=2))
 
 
 def show_tasks(tasks):
-    """Print every task with a number and a [x] / [ ] checkbox."""
+    # Print every task with a number and a [x] / [ ] checkbox.
     if not tasks:
         print("No tasks yet.")
         return
@@ -30,7 +30,7 @@ def show_tasks(tasks):
 
 
 def add_task(tasks):
-    """Ask for a title and add a new, not-yet-done task."""
+    # Ask for a title and add a new, not-yet-done task.
     title = input("Task: ").strip()
     if title:
         tasks.append({"title": title, "done": False})
@@ -40,7 +40,7 @@ def add_task(tasks):
 
 
 def pick_task(tasks, prompt):
-    """Show the list and ask for a task number. Return its index, or None."""
+    # Show the list and ask for a task number. Return its index, or None.
     if not tasks:
         print("No tasks yet.")
         return None
