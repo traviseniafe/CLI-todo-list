@@ -7,7 +7,7 @@ A small command-line to-do list written in Python. Tasks are saved to a local `t
 ## Run it
 
 ```
-python todo.py
+Run with python todo.py (Windows) or python3 todo.py (Mac/Linux)
 ```
 
 Requires Python 3.8 or newer. No extra packages needed.
